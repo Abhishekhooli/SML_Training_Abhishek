@@ -8,6 +8,6 @@
         </Headers>
     </Set>
 <Remove>
-  <Queryparam>apikey</Queryparam>
+  <QueryParam>apikey</QueryParam>
 </<Remove>
 </AssignMessage>
