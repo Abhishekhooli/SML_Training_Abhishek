@@ -17,6 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Debug - show repo contents
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 3 -not -path './.git/*' | head -50
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
