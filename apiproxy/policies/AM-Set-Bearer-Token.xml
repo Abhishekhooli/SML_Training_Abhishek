@@ -7,8 +7,7 @@
             <Header name="Authorization">Bearer {token.access_token}</Header>
         </Headers>
     </Set>
-    <Remove>
-        <Queryparam>apikey</Queryparam>
-    <QueryParam name="access_token">{access_token}</QueryParam>
-    </Remove>
+<Remove>
+  <Queryparam>apikey</Queryparam>
+</<Remove>
 </AssignMessage>
