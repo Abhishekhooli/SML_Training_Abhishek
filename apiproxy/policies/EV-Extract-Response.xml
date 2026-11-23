@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV-Extract-Response">
+    <DisplayName>EV-Extract-Response</DisplayName>
+    <Properties/>
+    <XMLPayload>
+        <Variable name="city">
+            <XPath>/root/city/text()</XPath>
+        </Variable>
+        <Variable name="state">
+            <XPath>/root/state/text()</XPath>
+        </Variable>
+    </XMLPayload>
+    <VariablePrefix>apigee</VariablePrefix>
+</ExtractVariables>

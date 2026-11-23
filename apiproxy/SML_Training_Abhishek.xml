@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="16" name="SML_Training_Abhishek">
+    <Basepaths>/sml_training_abhishek</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1710229547339</CreatedAt>
+    <CreatedBy>abhishek.hooli@shell.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>SML-Training-Abhishek</DisplayName>
+    <LastModifiedAt>1782901571834</LastModifiedAt>
+    <LastModifiedBy>abhishek.hooli@shell.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:82da6ef6fb0879abab7245513f9f6d9d393c8484565a350e973b97f7773ec176ccb9a62b5940deb9202291609f313ac4ae584c673d27e1ef6722924aae4e7ad1:ap-northeast-1</ManifestVersion>
+    <Policies>
+        <Policy>AM-Set-Bearer-Token</Policy>
+        <Policy>EV-Extract-Access-Token</Policy>
+        <Policy>EV-Extract-Response</Policy>
+        <Policy>JSON-to-XML</Policy>
+        <Policy>KVM-client-creditional</Policy>
+        <Policy>OAuth-v20</Policy>
+        <Policy>Quota</Policy>
+        <Policy>Response-Cache</Policy>
+        <Policy>SC-POC-Metrics</Policy>
+        <Policy>SC-Token-genration-App-specific</Policy>
+        <Policy>Service-Callout-Token-genration</Policy>
+        <Policy>Verify-API-Key</Policy>
+        <Policy>XML-to-JSON</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>Hello</ProxyEndpoint>
+        <ProxyEndpoint>OAuth</ProxyEndpoint>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

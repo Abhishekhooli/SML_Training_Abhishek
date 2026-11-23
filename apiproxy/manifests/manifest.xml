@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="AM-Set-Bearer-Token" version="SHA-512:094d5caf06bd1d74c8fadd6317688052395a4fbb83f4520330605a49ded227c73941e0d1af8adb6661f12237ab2be753f425ac09a109498dbf13f5ccf3af5d4a"/>
+        <VersionInfo resourceName="EV-Extract-Access-Token" version="SHA-512:e3fd8909618a67f309fb62382ef9d0d6dc85a66646d2fdb885a2e9c2248383109bf7252a77d13f4e703d7e9670219ab49f038c221f6e026cabbbb69e303b9115"/>
+        <VersionInfo resourceName="EV-Extract-Response" version="SHA-512:8d7f139e6063f363c29cc1ab0f48f0a011534e0a09897b34b0eb5584bdeb8566e8d5fdd8732d49887aacd295da086cc320774fb7e650f5badf8d0202e3dd2685"/>
+        <VersionInfo resourceName="JSON-to-XML" version="SHA-512:d0b45b514fe148e7492663b010b3e73742862855ec5385de09c150dae92f63fbb4a575c0d5d48f6dd6f2d66f2b5c2b856b5d363e4cc23f283931c88178827211"/>
+        <VersionInfo resourceName="KVM-client-creditional" version="SHA-512:cbc8d447a888d5f153e5acd04a6a8a35dbc1cdff87cbde184bdbf2161193e34eaa8d824e6cd60b3d8f284e7a04984ae51d372873df804519d20d79b5bf079d37"/>
+        <VersionInfo resourceName="OAuth-v20" version="SHA-512:2d249e41c867a9ad714bee28bee32cb7f3fde35bb724448658c2caeb35aa4185ad67f6fbf7a6329aa86bfda1e9d185e10d2b1bbabb7f745b94de0cb73b8c235b"/>
+        <VersionInfo resourceName="Quota" version="SHA-512:d407fcb50f560a9fc2a23ed653fe9d7a24bf75037ce83b20aae299920d3b419daabfe993928af4b1ab59a3ae7af802a1d2a9fc8cf00463de12edfec046c2b1ed"/>
+        <VersionInfo resourceName="Response-Cache" version="SHA-512:466e9c7dce9f1a22cd00ba0dd45e45cced42e87331d7a6ff13b9c7cbd56e1d780cbf6213358812c9789b742e315398b60ab75e6513985de5fbcadb1a56ebdfcf"/>
+        <VersionInfo resourceName="SC-POC-Metrics" version="SHA-512:6957d8468f80df234e67b11a1a71612252933a9f2a92aeab40f52a59adf2b4b9d75686dc033e75e1c5f6ab3010dba448d8abcc06a1bf86b0c6f91a4acba81938"/>
+        <VersionInfo resourceName="SC-Token-genration-App-specific" version="SHA-512:94a4141d105ea1fbb508f729385606b8451a7b26d93882094b9b8fc634817ad9bab2babd63828560cd69b5e4ddbeae7ad20abd0744cc42291c070c63a61ab0ca"/>
+        <VersionInfo resourceName="Service-Callout-Token-genration" version="SHA-512:0bac63d27d2725135bb3c05eb8252de0af8c0596b3a81840182b8cfce4aa9783d84d7d25ab488f02d189255262411eb74ea8fa061f1a47e1c6d51848e30c147e"/>
+        <VersionInfo resourceName="Verify-API-Key" version="SHA-512:ae278d3413af05c5a7e4e77ddcafb4b18dc68ece51b40805f9608109c3bf785c127b4200f319b6343e112a36a419b056e3a392a173ea6a0393d3bbf70ff3af3f"/>
+        <VersionInfo resourceName="XML-to-JSON" version="SHA-512:e16d979109634faed6c8abd064510dfa6a9d9107d6bc2a90b8beed869beb742703a452c6906c7e1d2e66726a41c3e994e88d59c3982cbb34fd67e5c9f97de40a"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="Hello" version="SHA-512:4252a5a74a02ce59d4471880605e40bd769c1f81dfab29d815e117f8fed6b460a15537707f0cde01fb418aaf86159d573c5e5676a35a551f95a8ff64008688d0"/>
+        <VersionInfo resourceName="OAuth" version="SHA-512:040d06da138aae77e24296b616d1d024f2266488123bbd1a4005b9caf8c8c12e5a2b309733f2d7667e78d39f8397bed95933291a37509e237e9672efa1542c03"/>
+        <VersionInfo resourceName="default" version="SHA-512:4cd4587ea7f891647045e7bcb025b6756768b1bb7ac339f93ebebc3f478ae64afe94a434aa8c6f06ea79b5768ac563483b59c3e8abd3dd66ebebaee46bc588b5"/>
+    </ProxyEndpoints>
+    <Resources/>
+    <SharedFlows/>
+    <TargetEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:ba1e2e15c8b1032040eceb11357f493c3738f8676f891c332e8d85fde103b1d253e972b170fcd4a22bf7e58a4237e5a436e27d26d0261b3d54119c6e6c0520e6"/>
+    </TargetEndpoints>
+</Manifest>

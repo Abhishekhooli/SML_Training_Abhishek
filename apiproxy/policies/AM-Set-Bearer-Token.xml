@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-Set-Bearer-Token">
+    <DisplayName>AM-Set-Bearer-Token</DisplayName>
+    <Properties/>
+    <Set>
+        <Headers>
+            <Header name="Authorization">Bearer {token.access_token}</Header>
+        </Headers>
+    </Set>
+    <Remove>
+        <Queryparam>apikey</Queryparam>
+        <Queryparam>A1</Queryparam>
+    </Remove>
+</AssignMessage>

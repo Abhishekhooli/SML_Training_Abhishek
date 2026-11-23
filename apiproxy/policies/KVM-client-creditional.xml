@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KVM-client-creditional" mapIdentifier="Abhishek_Hooli">
+    <DisplayName>KVM-client creditional</DisplayName>
+    <Scope>environment</Scope>
+    <Get assignTo="private.client_id">
+        <Key>
+            <Parameter>client_id</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="private.client_secret">
+        <Key>
+            <Parameter>client_secret</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="private.apikey">
+        <Key>
+            <Parameter>apikey</Parameter>
+        </Key>
+    </Get>
+</KeyValueMapOperations>

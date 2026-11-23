@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatisticsCollector async="false" continueOnError="false" enabled="true" name="SC-POC-Metrics">
+    <DisplayName>SC-POC-Metrics</DisplayName>
+    <Properties/>
+    <Statistics>
+        <Statistic name="city" ref="apigee.city" type="STRING">{apigee.city}</Statistic>
+        <Statistic name="state" ref="apigee.state" type="STRING">{apigee.state}</Statistic>
+    </Statistics>
+</StatisticsCollector>

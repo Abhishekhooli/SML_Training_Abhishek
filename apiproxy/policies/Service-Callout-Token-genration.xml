@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="Service-Callout-Token-genration">
+    <DisplayName>SC-Token genration</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="myRequest">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Set>
+            <Verb>POST</Verb>
+            <QueryParams>
+                <QueryParam name="grant_type">client_credentials</QueryParam>
+            </QueryParams>
+            <Headers>
+                <Header name="Content-Type">application/x-www-form-urlencoded</Header>
+                <Header name="apiKey">{private.apikey}</Header>
+                <Hearder name="content-Type">application/json</Hearder>
+            </Headers>
+            <FormParams>
+                <FormParam name="grant_type">client_credentials</FormParam>
+                <FormParam name="client_id">{private.client_id}</FormParam>
+                <FormParam name="client_secret">{private.client_secret}</FormParam>
+            </FormParams>
+        </Set>
+    </Request>
+    <Response>access_token</Response>
+    <HTTPTargetConnection>
+        <URL>https://api-dev.shell.com/sml-training-vinu-b/accesstoken</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

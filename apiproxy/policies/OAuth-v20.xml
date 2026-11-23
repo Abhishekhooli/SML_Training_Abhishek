@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="OAuth-v20">
+    <DisplayName>OAuth v2.0</DisplayName>
+    <Properties/>
+    <Attributes/>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>GenerateAccessToken</Operation>
+    <SupportedGrantTypes/>
+    <grantType>client_credentials</grantType>
+    <SupportedGrantTypes/>
+    <grantType>request.queryparam.grant_type</grantType>
+    <GenerateResponse enabled="true"/>
+    <Tokens/>
+</OAuthV2>
