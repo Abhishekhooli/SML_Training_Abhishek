@@ -1,0 +1,65 @@
+name: Deploy Apigee Proxy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target Apigee environment'
+        required: true
+        type: choice
+        options:
+          - dev
+        default: dev
+
+env:
+  PROXY_NAME: SML_Training_Abhishek
+
+jobs:
+  deploy:
+    name: Deploy to ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    # Safety: only allow deployment of code that is on main
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Get Apigee access token
+        id: auth
+        run: |
+          RESPONSE=$(curl -s -X POST https://login.apigee.com/oauth/token \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -H "Accept: application/json;charset=utf-8" \
+            -H "Authorization: Basic ZWRnZWNsaTplZGdlY2xpc2VjcmV0" \
+            -d "grant_type=refresh_token&refresh_token=${{ secrets.APIGEE_REFRESH_TOKEN }}")
+          TOKEN=$(echo "$RESPONSE" | jq -r '.access_token')
+          if [ -z "$TOKEN" ] || [ "$TOKEN" = "null" ]; then
+            echo "Failed to get access token. Refresh token may have expired."
+            exit 1
+          fi
+          echo "::add-mask::$TOKEN"
+          echo "token=$TOKEN" >> "$GITHUB_OUTPUT"
+
+      - name: Install apigeetool
+        run: npm install -g apigeetool
+
+      - name: Deploy proxy to Apigee Edge
+        run: |
+          apigeetool deployproxy \
+            -o "${{ secrets.APIGEE_ORG }}" \
+            -e "${{ inputs.environment }}" \
+            -n "$PROXY_NAME" \
+            -d . \
+            -t "${{ steps.auth.outputs.token }}"
+
+      - name: Smoke test
+        run: |
+          sleep 20
+          URL="https://${{ secrets.APIGEE_ORG }}-${{ inputs.environment }}.apigee.net${{ vars.BASE_PATH }}"
+          echo "Testing $URL"
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+          echo "HTTP status: $STATUS"
+          [ "$STATUS" -eq 200 ] || [ "$STATUS" -eq 401 ]
