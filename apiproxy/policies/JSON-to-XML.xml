@@ -4,7 +4,6 @@
     <Properties/>
     <Options>
         <NullValue>NULL</NullValue>
-        <NamespaceBlockName>#namespaces</NamespaceBlockName>
         <DefaultNamespaceNodeName>$default</DefaultNamespaceNodeName>
         <NamespaceSeparator>:</NamespaceSeparator>
         <TextNodeName>#text</TextNodeName>
