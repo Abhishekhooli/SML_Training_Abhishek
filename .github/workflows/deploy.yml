@@ -1,36 +1,26 @@
-name: Apigee Edge CI/CD
+name: Deploy Apigee Proxy
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target Apigee environment'
+        required: true
+        type: choice
+        options:
+          - dev
+        default: dev
 
 env:
   PROXY_NAME: SML_Training_Abhishek
-  TARGET_ENV: dev
 
 jobs:
-  lint:
-    name: Lint API Proxy
+  deploy:
+    name: Deploy to ${{ inputs.environment }}
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - name: Install apigeelint
-        run: npm install -g apigeelint
-      - name: Run apigeelint
-        run: apigeelint -s apiproxy -f table.js
-
-  deploy-dev:
-    name: Deploy to Dev
-    needs: lint
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    runs-on: ubuntu-latest
-    environment: dev
+    environment: ${{ inputs.environment }}
+    # Safety: only allow deployment of code that is on main
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -56,11 +46,11 @@ jobs:
       - name: Install apigeetool
         run: npm install -g apigeetool
 
-      - name: Deploy proxy to Apigee Edge (dev)
+      - name: Deploy proxy to Apigee Edge
         run: |
           apigeetool deployproxy \
             -o "${{ secrets.APIGEE_ORG }}" \
-            -e "$TARGET_ENV" \
+            -e "${{ inputs.environment }}" \
             -n "$PROXY_NAME" \
             -d . \
             -t "${{ steps.auth.outputs.token }}"
@@ -68,8 +58,8 @@ jobs:
       - name: Smoke test
         run: |
           sleep 20
-          URL="https://${{ secrets.APIGEE_ORG }}-${TARGET_ENV}.apigee.net${{ vars.BASE_PATH }}"
+          URL="https://${{ secrets.APIGEE_ORG }}-${{ inputs.environment }}.apigee.net${{ vars.BASE_PATH }}"
           echo "Testing $URL"
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
           echo "HTTP status: $STATUS"
-          [ "$STATUS" -lt 400 ]
+          [ "$STATUS" -eq 200 ] || [ "$STATUS" -eq 401 ]

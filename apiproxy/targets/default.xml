@@ -15,6 +15,5 @@
         <LoadBalancer>
             <Server name="Abhishek_SML"/>
         </LoadBalancer>
-        <Pathsuffix>/XML</Pathsuffix>
     </HTTPTargetConnection>
 </TargetEndpoint>

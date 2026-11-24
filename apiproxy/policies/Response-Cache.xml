@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ResponseCache async="false" continueOnError="false" enabled="true" name="Response-Cache">
+    <ExcludeErrorResponse>true</ExcludeErrorResponse>
     <DisplayName>Response Cache</DisplayName>
     <Properties/>
     <CacheKey>
@@ -10,7 +11,7 @@
     <ExpirySettings>
         <ExpiryDate/>
         <TimeOfDay/>
-        <TimeoutInSec ref="">3600</TimeoutInSec>
+        <TimeoutInSeconds ref="">3600</TimeoutInSeconds>
     </ExpirySettings>
     <SkipCacheLookup/>
     <SkipCachePopulation/>
